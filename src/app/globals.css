@@ -1,0 +1,238 @@
+:root {
+  /* Color Palette */
+  --bg-primary: #fdfbf9;
+  --bg-secondary: #f6f0e7;
+  --bg-dark: #2c3545;
+  --bg-dark-hover: #1e2531;
+  --accent-gold: #c29c7d;
+  --accent-gold-hover: #b08b6c;
+  --accent-gold-light: #f5ede4;
+  --text-main: #332d27;
+  --text-muted: #756e65;
+  --text-light: #ffffff;
+  --border-color: #ebdcd0;
+  
+  /* Layout */
+  --header-height: 100px;
+  --header-shrink-height: 70px;
+  --max-width: 1200px;
+  
+  /* Fonts */
+  --font-main: var(--font-inter), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-title: var(--font-outfit), Georgia, serif;
+  
+  /* Transitions & Shadows */
+  --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --shadow-light: 0 4px 20px rgba(194, 156, 125, 0.08);
+  --shadow-medium: 0 10px 30px rgba(44, 53, 69, 0.08);
+  --shadow-header: 0 2px 15px rgba(44, 53, 69, 0.05);
+}
+
+/* Reset & Base Styles */
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  height: 100%;
+}
+
+body {
+  font-family: var(--font-main);
+  color: var(--text-main);
+  background-color: var(--bg-primary);
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-title);
+  font-weight: 500;
+  line-height: 1.25;
+  color: var(--bg-dark);
+}
+
+p {
+  color: var(--text-muted);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: var(--transition-smooth);
+}
+
+button {
+  font-family: var(--font-main);
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background: none;
+  transition: var(--transition-smooth);
+}
+
+/* Common Layout Components */
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.section {
+  padding: 100px 0;
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 60px 0;
+  }
+}
+
+/* Interactive & Design Tokens */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 28px;
+  border-radius: 50px;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  transition: var(--transition-smooth);
+  gap: 8px;
+}
+
+.btn-primary {
+  background-color: var(--bg-dark);
+  color: var(--text-light);
+}
+
+.btn-primary:hover {
+  background-color: var(--bg-dark-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(44, 53, 69, 0.15);
+}
+
+.btn-secondary {
+  background-color: var(--accent-gold);
+  color: var(--text-light);
+}
+
+.btn-secondary:hover {
+  background-color: var(--accent-gold-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(194, 156, 125, 0.2);
+}
+
+.btn-outline {
+  border: 1px solid var(--accent-gold);
+  color: var(--bg-dark);
+}
+
+.btn-outline:hover {
+  background-color: var(--accent-gold-light);
+  transform: translateY(-2px);
+}
+
+/* Floating WhatsApp Button */
+.whatsapp-float {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: #25d366;
+  color: white;
+  width: 60px;
+  height: 60px;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 24px rgba(37, 211, 102, 0.3);
+  z-index: 1000;
+  font-size: 30px;
+  transition: var(--transition-smooth);
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.1);
+  box-shadow: 0 12px 30px rgba(37, 211, 102, 0.5);
+}
+
+/* Section Header Helper */
+.section-header {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto 60px auto;
+}
+
+.section-tag {
+  font-family: var(--font-main);
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--accent-gold);
+  letter-spacing: 0.15em;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.section-title {
+  font-size: 36px;
+  margin-bottom: 16px;
+  position: relative;
+}
+
+.section-title::after {
+  content: '';
+  display: block;
+  width: 50px;
+  height: 2px;
+  background-color: var(--accent-gold);
+  margin: 16px auto 0 auto;
+}
+
+.section-desc {
+  font-size: 16px;
+  color: var(--text-muted);
+}
+
+/* --- SCROLL-DRIVEN & REVEAL ANIMATIONS --- */
+
+/* Reveal effect when scrolling into view */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* For browsers that support scroll-driven animations */
+@supports ((animation-timeline: view()) and (animation-range: entry)) {
+  .scroll-reveal {
+    animation: fade-in-up linear both;
+    animation-timeline: view();
+    animation-range: entry 10% cover 30%;
+  }
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(40px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}

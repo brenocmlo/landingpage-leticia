@@ -1,0 +1,245 @@
+.section {
+  background-color: var(--bg-secondary);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 40px;
+  align-items: start;
+}
+
+/* Left Sidebar Menu */
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  background-color: var(--bg-primary);
+  padding: 16px;
+  border-radius: 12px;
+  box-shadow: var(--shadow-light);
+  border: 1px solid var(--border-color);
+}
+
+.tabButton {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 20px;
+  border-radius: 8px;
+  text-align: left;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-muted);
+  background-color: transparent;
+  transition: var(--transition-smooth);
+  border-left: 3px solid transparent;
+}
+
+.tabButton:hover {
+  background-color: var(--accent-gold-light);
+  color: var(--bg-dark);
+}
+
+.activeTabButton {
+  background-color: var(--bg-dark);
+  color: var(--text-light) !important;
+  border-left-color: var(--accent-gold);
+}
+
+.tabIcon {
+  font-size: 16px;
+  width: 20px;
+  text-align: center;
+}
+
+.activeTabButton .tabIcon {
+  color: var(--accent-gold);
+}
+
+/* Right Content Area */
+.contentArea {
+  min-height: 480px;
+}
+
+.procedureCard {
+  background-color: var(--bg-primary);
+  border-radius: 16px;
+  box-shadow: var(--shadow-medium);
+  border: 1px solid var(--border-color);
+  padding: 40px;
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 40px;
+  align-items: center;
+  transition: var(--transition-smooth);
+  animation: fadeIn 0.4s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.imageWrapper {
+  position: relative;
+  aspect-ratio: 4/5;
+  width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-light);
+}
+
+.imageWrapper img {
+  object-fit: cover;
+}
+
+/* Card Text Info */
+.info {
+  display: flex;
+  flex-direction: column;
+}
+
+.stepIndicator {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--accent-gold);
+  letter-spacing: 0.1em;
+  margin-bottom: 8px;
+}
+
+.title {
+  font-size: 28px;
+  color: var(--bg-dark);
+  margin-bottom: 16px;
+}
+
+.description {
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--text-muted);
+  margin-bottom: 24px;
+}
+
+.benefitsTitle {
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--bg-dark);
+  margin-bottom: 12px;
+}
+
+.benefitsList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 30px;
+}
+
+.benefitItem {
+  font-size: 14px;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.benefitItem i {
+  color: var(--accent-gold);
+  font-size: 12px;
+}
+
+/* Pricing and Call to Action */
+.footerArea {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid var(--border-color);
+  padding-top: 24px;
+  margin-top: auto;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.priceLabel {
+  font-size: 12px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  letter-spacing: 0.05em;
+  display: block;
+}
+
+.priceValue {
+  font-family: var(--font-title);
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--accent-gold);
+}
+
+.priceSub {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.ctaButton {
+  background-color: var(--accent-gold);
+  color: var(--text-light);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 12px 28px;
+  border-radius: 50px;
+}
+
+.ctaButton:hover {
+  background-color: var(--accent-gold-hover);
+  transform: translateY(-1px);
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .sidebar {
+    flex-direction: row;
+    overflow-x: auto;
+    padding: 8px;
+    gap: 8px;
+    border-radius: 8px;
+  }
+  
+  .tabButton {
+    white-space: nowrap;
+    padding: 10px 16px;
+    font-size: 13px;
+    border-left: none;
+    border-bottom: 2px solid transparent;
+  }
+  
+  .activeTabButton {
+    border-bottom-color: var(--accent-gold);
+  }
+  
+  .procedureCard {
+    grid-template-columns: 1fr;
+    padding: 24px;
+    gap: 24px;
+  }
+  
+  .imageWrapper {
+    aspect-ratio: 16/9;
+  }
+}
