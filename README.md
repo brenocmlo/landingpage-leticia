@@ -1,36 +1,88 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🌸 Leticia Terceiro | Estética Facial & Corporal Avançada
 
-## Getting Started
+Uma **Landing Page Premium** de alta fidelidade e performance para uma clínica de estética avançada, desenvolvida com **Next.js** e **Vanilla CSS Modules**. O design foi minuciosamente elaborado para transmitir luxo, sofisticação e autoridade, integrando animações modernas e foco absoluto em conversão (UX/UI para captação de clientes via WhatsApp).
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## ✨ Características do Projeto
+
+* 🎨 **A estética visual "Premium"**: Inspirada nas melhores clínicas de dermatologia e estética. Utiliza uma paleta minimalista e aconchegante baseada em tons neutros de creme, marinho profundo e detalhes em bronze/ouro.
+* ⚡ **Performance Ultra Otimizada**:
+  * Imagem de LCP (Largest Contentful Paint) no Hero otimizada nativamente com `fetchpriority="high"` e compressão de formato moderna.
+  * Carregamento de fontes (*Outfit* para títulos e *Inter* para o corpo) via `next/font/google` para evitar oscilações de layout (CLS).
+* 📱 **Totalmente Responsivo**: Layout fluido desenvolvido com técnicas modernas de Grid e Flexbox, proporcionando uma experiência impecável tanto em celulares quanto em telas ultra-wide.
+* 🖱️ **Micro-interações e Animações Fluidas**:
+  * **Shrinking Header**: Menu fixo superior que se contrai suavemente e ganha desfoque de fundo (*backdrop-filter*) ao rolar a página.
+  * **Interactive Procedures**: Seção de procedimentos interativa estilo "Tabbed Component", onde o usuário navega verticalmente entre os tratamentos, alternando instantaneamente imagens, descrições, preços e vantagens.
+  * **Scroll Reveal**: Efeito de fade-in e scale acionado sob demanda à medida que os elementos entram no viewport, utilizando a API de alta performance `IntersectionObserver`.
+* 🤖 **Assets de Alta Fidelidade**: Todas as imagens do projeto foram criadas exclusivamente usando geração de imagens por inteligência artificial para representar cenários clínicos e profissionais de altíssimo padrão.
+
+---
+
+## 🛠️ Tecnologias Utilizadas
+
+* **Framework**: [Next.js](https://nextjs.org/) (App Router)
+* **Linguagem**: JavaScript (ES6+)
+* **Estilização**: CSS Modules (Vanilla CSS puro, garantindo zero dependências extras e isolamento completo de estilos)
+* **Fontes**: Google Fonts (*Outfit* e *Inter*)
+* **Ícones**: Font Awesome (via CDN)
+* **Otimização de Mídia**: `next/image`
+
+---
+
+## 📂 Estrutura do Projeto
+
+```text
+├── src/
+│   ├── app/
+│   │   ├── globals.css      # Sistema de cores, tipografia, resets e animações globais
+│   │   ├── layout.js       # Configuração do HTML, metadados SEO e fontes
+│   │   └── page.js         # Estrutura principal da página e controle do Scroll Reveal
+│   ├── components/         # Componentes modulares e reutilizáveis
+│   │   ├── About.js        # Apresentação profissional da Dra. Leticia
+│   │   ├── Footer.js       # Informações finais de contato e navegação
+│   │   ├── Header.js       # Menu dinâmico superior com scroll-effect e responsividade
+│   │   ├── Hero.js         # Seção principal com o primeiro CTA
+│   │   ├── Procedures.js   # Abas interativas de tratamentos
+│   │   ├── QuickCategories.js # Barra de rápido acesso de especialidades
+│   │   └── Technology.js   # Seção dedicada ao Endolaser e tecnologia clínica
+│   └── config/
+│       └── clinic.js       # Centralização dos dados de contato, WhatsApp e serviços
+└── public/
+    └── images/             # Imagens geradas com alta resolução clínica
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## 🚀 Como Executar o Projeto Localmente
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. **Clone o repositório:**
+   ```bash
+   git clone https://github.com/seu-usuario/landingpage-leticia.git
+   cd landingpage-leticia
+   ```
 
-## Learn More
+2. **Instale as dependências:**
+   ```bash
+   npm install
+   ```
 
-To learn more about Next.js, take a look at the following resources:
+3. **Inicie o servidor de desenvolvimento:**
+   ```bash
+   npm run dev
+   ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+4. **Abra o navegador:**
+   Acesse [http://localhost:3000](http://localhost:3000) para ver o projeto funcionando em tempo real.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## 📦 Build para Produção
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Para testar a otimização máxima da página e gerar os arquivos estáticos de produção:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```bash
+npm run build
+```
+
+O Next.js compilará o projeto de forma estática (SSG), assegurando que o tempo de carregamento da landing page seja menor que 1 segundo, essencial para campanhas de tráfego pago (Google Ads/Meta Ads).
