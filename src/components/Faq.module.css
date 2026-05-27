@@ -1,0 +1,98 @@
+.section {
+  background-color: var(--bg-secondary);
+}
+
+.faqWrapper {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Exclusive disclosure tags (<details>) */
+.disclosure {
+  background-color: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  box-shadow: var(--shadow-light);
+  overflow: hidden;
+  transition: var(--transition-smooth);
+}
+
+.disclosure[open] {
+  border-color: var(--accent-gold);
+  box-shadow: var(--shadow-medium);
+}
+
+/* Accordion Summary click area */
+.summary {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px;
+  font-family: var(--font-title);
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--bg-dark);
+  cursor: pointer;
+  user-select: none;
+  transition: var(--transition-smooth);
+}
+
+.summary:hover {
+  color: var(--accent-gold);
+  background-color: var(--accent-gold-light);
+}
+
+/* Hide default marker in Safari and Chrome */
+.summary::-webkit-details-marker {
+  display: none;
+}
+
+/* Gold chevron indicator */
+.icon {
+  font-size: 14px;
+  color: var(--accent-gold);
+  transition: transform 0.3s ease;
+}
+
+.disclosure[open] .icon {
+  transform: rotate(180deg);
+}
+
+/* Content Area inside details */
+.content {
+  padding: 0 24px 24px 24px;
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--text-muted);
+  border-top: 1px dashed rgba(194, 156, 125, 0.2);
+  padding-top: 20px;
+  animation: slideDown 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .summary {
+    padding: 18px;
+    font-size: 15px;
+  }
+  
+  .content {
+    padding: 0 18px 18px 18px;
+    padding-top: 16px;
+    font-size: 14px;
+  }
+}

@@ -84,12 +84,22 @@ export default function Header() {
                 Sobre Leticia
               </a>
             </li>
+            <li>
+              <a href="#depoimentos" className={styles.navLink} onClick={() => setIsMobileMenuOpen(false)}>
+                Depoimentos
+              </a>
+            </li>
+            <li>
+              <a href="#faq" className={styles.navLink} onClick={() => setIsMobileMenuOpen(false)}>
+                FAQ
+              </a>
+            </li>
           </ul>
         </nav>
 
         {/* CTA Button */}
         <div className={styles.navCta}>
-          <a href={clinicConfig.whatsappUrl} target="_blank" rel="noopener noreferrer" className={`btn ${styles.navCtaButton}`}>
+          <a href="#agendamento" className={`btn ${styles.navCtaButton}`}>
             Agendar Consulta
           </a>
         </div>

@@ -1,0 +1,113 @@
+.section {
+  background-color: var(--bg-primary);
+  border-top: 1px solid var(--border-color);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+  margin-top: 20px;
+}
+
+.card {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  padding: 32px;
+  box-shadow: var(--shadow-light);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: var(--transition-smooth);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-medium);
+  border-color: var(--accent-gold);
+}
+
+/* Review Stars & Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.stars {
+  display: flex;
+  gap: 4px;
+  color: var(--accent-gold);
+  font-size: 14px;
+}
+
+.verifiedTag {
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #155724;
+  background-color: #d4edda;
+  padding: 4px 8px;
+  border-radius: 50px;
+  letter-spacing: 0.05em;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* Review Text */
+.text {
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--text-muted);
+  font-style: italic;
+  margin-bottom: 24px;
+}
+
+/* Patient Profile info */
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  border-top: 1px solid rgba(194, 156, 125, 0.15);
+  padding-top: 20px;
+}
+
+.avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: var(--accent-gold-light);
+  border: 1px solid var(--accent-gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  color: var(--bg-dark);
+  font-size: 16px;
+}
+
+.profileInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.name {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--bg-dark);
+}
+
+.treatment {
+  font-size: 12px;
+  color: var(--accent-gold);
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .card {
+    padding: 24px;
+  }
+}

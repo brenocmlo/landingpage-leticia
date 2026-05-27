@@ -7,6 +7,9 @@ import QuickCategories from "@/components/QuickCategories";
 import Procedures from "@/components/Procedures";
 import Technology from "@/components/Technology";
 import About from "@/components/About";
+import Testimonials from "@/components/Testimonials";
+import Faq from "@/components/Faq";
+import ContactForm from "@/components/ContactForm";
 import Footer from "@/components/Footer";
 import { clinicConfig } from "@/config/clinic";
 
@@ -53,6 +56,15 @@ export default function Home() {
         </div>
         <div className="reveal">
           <About />
+        </div>
+        <div className="reveal">
+          <Testimonials />
+        </div>
+        <div className="reveal">
+          <Faq />
+        </div>
+        <div className="reveal">
+          <ContactForm />
         </div>
       </main>
       <Footer />
